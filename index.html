@@ -43,33 +43,6 @@
             margin-bottom: 30px;
         }
 
-        /* Video Section */
-        .video-section {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            margin: 40px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            margin: 25px auto;
-            max-width: 800px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-        }
-
         .book-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -184,25 +157,415 @@
             color: #A0522D;
         }
 
+        /* ── LORE BIBLE SECTION ── */
+
+        .lore-section {
+            margin: 60px 0;
+        }
+
+        .lore-section-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .lore-section-header h2 {
+            font-size: 2rem;
+            color: #2c1810;
+            letter-spacing: 1px;
+        }
+
+        .lore-section-header p {
+            color: #8B4513;
+            font-style: italic;
+            margin-top: 6px;
+            font-size: 1rem;
+        }
+
+        .lore-divider {
+            border: none;
+            border-top: 2px solid #8B4513;
+            margin: 16px auto 30px;
+            width: 80px;
+        }
+
+        /* Spoiler warning banner */
+        .spoiler-banner {
+            background: #2c1810;
+            color: #f0ebe4;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .spoiler-banner-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .spoiler-banner h3 {
+            font-size: 1rem;
+            color: #e8c89a;
+            margin-bottom: 4px;
+        }
+
+        .spoiler-banner p {
+            font-size: 0.88rem;
+            color: #c8a878;
+            line-height: 1.6;
+        }
+
+        /* Lore nav tabs */
+        .lore-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .lore-nav-btn {
+            padding: 8px 16px;
+            border: 1.5px solid #8B4513;
+            border-radius: 4px;
+            background: white;
+            color: #8B4513;
+            font-size: 0.85rem;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lore-nav-btn:hover,
+        .lore-nav-btn.active {
+            background: #8B4513;
+            color: white;
+        }
+
+        /* Lore sections */
+        .lore-tab {
+            display: none;
+        }
+
+        .lore-tab.active {
+            display: block;
+        }
+
+        .lore-card {
+            background: white;
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+            border-left: 4px solid #8B4513;
+        }
+
+        .lore-card h3 {
+            color: #2c1810;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .lore-card p,
+        .lore-card li {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .lore-card ul {
+            padding-left: 1.2rem;
+            margin-top: 6px;
+        }
+
+        .lore-card ul li {
+            margin-bottom: 4px;
+        }
+
+        .lore-quote {
+            background: #f0ebe4;
+            border-left: 4px solid #8B4513;
+            padding: 14px 18px;
+            border-radius: 0 6px 6px 0;
+            margin: 10px 0;
+            font-style: italic;
+            color: #5a3a1a;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .lore-warn {
+            background: #fdf0e8;
+            border-left: 4px solid #c0522d;
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 10px 0;
+            color: #7a3010;
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        .lore-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .lore-force-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .lore-force-card {
+            background: white;
+            border: 1.5px solid #c8a878;
+            border-radius: 6px;
+            padding: 12px 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .lore-force-card h4 {
+            color: #2c1810;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .lore-force-card p {
+            color: #7a6040;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        /* Lore table */
+        .lore-table-wrap {
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .lore-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .lore-table th {
+            background: #2c1810;
+            color: #f0ebe4;
+            text-align: left;
+            padding: 8px 12px;
+            font-weight: bold;
+        }
+
+        .lore-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid #e8ddd0;
+            color: #444;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        .lore-table tr:nth-child(even) td {
+            background: #faf7f3;
+        }
+
+        .lore-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Timeline */
+        .lore-timeline-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 18px;
+            align-items: flex-start;
+        }
+
+        .lore-timeline-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 4px;
+            border: 2px solid #f8f5f0;
+        }
+
+        .lore-timeline-dot.gold { background: #8B6914; }
+        .lore-timeline-dot.dark { background: #4a4a9a; }
+        .lore-timeline-dot.red  { background: #8B2020; }
+        .lore-timeline-dot.gray { background: #888; }
+        .lore-timeline-dot.teal { background: #2a7a5a; }
+
+        .lore-timeline-item strong {
+            display: block;
+            color: #2c1810;
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+
+        .lore-timeline-item p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        /* Character cards */
+        .lore-char-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .lore-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 13px;
+            flex-shrink: 0;
+            border: 2px solid #c8a878;
+        }
+
+        .av-gold   { background: #fdf0d0; color: #6a4010; }
+        .av-dark   { background: #e8e8f8; color: #303080; }
+        .av-red    { background: #fde8e8; color: #802020; }
+        .av-teal   { background: #e0f0e8; color: #205040; }
+        .av-blue   { background: #e0ecf8; color: #204060; }
+        .av-coral  { background: #fdeae0; color: #6a3010; }
+        .av-gray   { background: #f0f0f0; color: #404040; }
+        .av-purple { background: #ede8f8; color: #402870; }
+        .av-green  { background: #e8f4e0; color: #205010; }
+
+        /* Weapon cards */
+        .lore-weapon-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+            border-top: 3px solid #8B4513;
+        }
+
+        .lore-weapon-name {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #2c1810;
+            background: #f0ebe4;
+            padding: 4px 12px;
+            border-radius: 999px;
+            display: inline-block;
+            margin-bottom: 8px;
+            border: 1px solid #c8a878;
+        }
+
+        .lore-weapon-card p {
+            color: #555;
+            font-size: 0.87rem;
+            line-height: 1.8;
+        }
+
+        /* Status badges */
+        .lore-status {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .status-written    { background: #e8f4e0; color: #2a5a1a; border: 1px solid #a0c880; }
+        .status-writing    { background: #e8f0fd; color: #1a3a7a; border: 1px solid #88a8e0; }
+        .status-planned    { background: #fdf4e0; color: #6a4a10; border: 1px solid #d8b860; }
+        .status-future     { background: #f0e8fd; color: #3a1a6a; border: 1px solid #a880d8; }
+
+        /* Vhalgor stages */
+        .lore-vhalgor-stage {
+            padding: 10px 14px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 8px;
+            border-left: 3px solid;
+            font-size: 0.87rem;
+        }
+
+        .vs-guilt     { border-color: #888; background: #f8f8f8; color: #444; }
+        .vs-selfhate  { border-color: #a06060; background: #fdf4f4; color: #5a2020; }
+        .vs-worldhate { border-color: #c04040; background: #fde8e8; color: #6a1010; }
+        .vs-rage      { border-color: #8B2020; background: #fdddd0; color: #5a0808; }
+        .vs-vessel    { border-color: #5a2a9a; background: #f0e8fd; color: #3a1060; }
+
+        .lore-pill {
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 999px;
+            border: 1px solid #c8a878;
+            color: #7a5030;
+            background: #faf5ee;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* Section title inside lore */
+        .lore-tab-title {
+            font-size: 1.4rem;
+            color: #2c1810;
+            margin-bottom: 4px;
+        }
+
+        .lore-tab-sub {
+            font-size: 0.88rem;
+            color: #8B4513;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Spoiler toggle for individual cards */
+        .spoiler-toggle-btn {
+            background: none;
+            border: 1.5px solid #8B4513;
+            color: #8B4513;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-family: 'Georgia', serif;
+            font-size: 0.82rem;
+            cursor: pointer;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .spoiler-toggle-btn:hover {
+            background: #8B4513;
+            color: white;
+        }
+
+        .spoiler-content {
+            display: none;
+        }
+
+        .spoiler-content.revealed {
+            display: block;
+        }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            .book-grid {
-                grid-template-columns: 1fr;
-            }
-            .video-section, .about-section {
-                padding: 25px;
-            }
-            .btn {
-                display: block;
-                margin: 10px auto;
-                width: 80%;
-            }
+            h1 { font-size: 2.2rem; }
+            .book-grid { grid-template-columns: 1fr; }
+            .about-section { padding: 25px; }
+            .btn { display: block; margin: 10px auto; width: 80%; }
+            .lore-force-grid { grid-template-columns: repeat(2, 1fr); }
+            .lore-nav-btn { font-size: 0.78rem; padding: 6px 10px; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Ziad Jweiles</h1>
         <div class="subtitle">Author of the Zemoria Chronicles</div>
@@ -213,8 +576,7 @@
         <div class="book-card">
             <h2 class="book-title">The Fractured Tree</h2>
             <div class="book-subtitle">Zemoria Chronicles, Book 1</div>
-            <!-- Replace with your book cover image -->
-            <img src="https://m.media-amazon.com/images/I/71n3m9Az5sL._SL1500_.jpg" 
+            <img src="https://m.media-amazon.com/images/I/71n3m9Az5sL._SL1500_.jpg"
                  alt="The Fractured Tree Cover" class="book-cover">
             <p>Kaelen, a quiet wanderer with no claim to legend, is drawn into a journey that will test his loyalty, his strength, and his understanding of power itself.</p>
             <a href="https://www.amazon.com/dp/B0G7H3YFHB" target="_blank" class="btn">Buy on Amazon</a>
@@ -222,12 +584,11 @@
                 <i class="fab fa-goodreads"></i> Goodreads
             </a>
         </div>
-        
+
         <div class="book-card">
             <h2 class="book-title">The Lord Under</h2>
             <div class="book-subtitle">Zemoria Chronicles, Book 2</div>
-            <!-- Replace with your book cover image -->
-            <img src="https://m.media-amazon.com/images/I/61ZL59KuogL._SL1500_.jpg" 
+            <img src="https://m.media-amazon.com/images/I/61ZL59KuogL._SL1500_.jpg"
                  alt="The Lord Under Cover" class="book-cover">
             <p>Driven by a hunger for recognition that curdles into a thirst for vengeance, Ruun begins a monstrous transformation.</p>
             <a href="https://www.amazon.com/gp/product/B0FVVYZZYB" target="_blank" class="btn">Buy on Amazon</a>
@@ -239,26 +600,25 @@
 
     <!-- About Section -->
     <section class="about-section">
-        <!-- Replace with your author photo -->
-        <img src="IMG_20251216_155021.jpg" 
+        <img src="IMG_20251216_155021.jpg"
              alt="Ziad Jweiles" class="author-photo">
         <h2>About the Author</h2>
-        
+
         <p>Ziad Jweiles has been obsessed with writing stories since he was five years old. For him, writing has never been about fame or fortune—it's about sharing the worlds in his imagination with readers around the globe. Each story he writes represents a piece of himself offered to the world.</p>
-        
+
         <p>His writing process is uniquely personal: <strong>all his stories begin as dreams</strong>, blended with his own life experiences. The dark fantasy realms of the Zemoria Chronicles were born from this distinctive fusion of subconscious visions and personal journeys.</p>
-        
+
         <p>When not writing, Ziad immerses himself in story-driven games and soulslikes—he's a passionate gamer who appreciates rich narratives and challenging gameplay. These interactive stories frequently inspire his own creative process.</p>
-        
+
         <p>As someone with high-functioning autism, Ziad has found that writing allows him to communicate in ways that feel authentic and meaningful. He hopes his journey can <strong>inspire others to pick up a pen (or keyboard)</strong> and share their own unique stories with the world.</p>
-        
+
         <p>The Zemoria Chronicles represents his creative heart—a series where inner demons become literal ones, and every character's struggle reflects the complexities we all face. Currently, the series includes "The Lord Under" and "The Fractured Tree," with more dark, dream-born tales in development.</p>
-        
+
         <div class="philosophy-section">
             <h3 style="color: #2c1810; margin-bottom: 15px;">Writing Philosophy</h3>
             <p><em>"I believe every person has a story worth telling. My dreams provide the settings—dark forests, crumbling empires, impossible choices—but it's the human experiences we all share that populate them with real emotion. I write for the quiet dreamers, the gamers who see stories everywhere, and anyone who's ever felt their inner world was too complex to explain. If my words help one person feel seen or inspire them to create, I've succeeded."</em></p>
         </div>
-        
+
         <div style="margin-top: 20px; text-align: center;">
             <a href="https://www.goodreads.com/author/show/56115411.Ziad_Jweiles" target="_blank" class="btn">
                 <i class="fab fa-goodreads"></i> Follow on Goodreads
@@ -267,6 +627,473 @@
                 <i class="fas fa-envelope"></i> Contact
             </a>
         </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         LORE BIBLE SECTION
+    ══════════════════════════════════════════ -->
+    <section class="lore-section">
+
+        <div class="lore-section-header">
+            <h2>The World of Zemoria</h2>
+            <p>A guide to the lore, history, and mythology of the Zemoria Chronicles</p>
+        </div>
+        <hr class="lore-divider">
+
+        <!-- Spoiler Warning -->
+        <div class="spoiler-banner">
+            <div class="spoiler-banner-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div>
+                <h3>Spoiler Warning</h3>
+                <p>This lore bible contains significant spoilers for <em>The Fractured Tree</em> and <em>The Lord Under</em>, as well as details about books currently in development. Sections marked with a spoiler toggle reveal information about major plot points, character fates, and story outcomes. Read at your own discretion.</p>
+            </div>
+        </div>
+
+        <!-- Nav tabs -->
+        <div class="lore-nav">
+            <button class="lore-nav-btn active" onclick="showLore('cosmology')">Cosmology</button>
+            <button class="lore-nav-btn" onclick="showLore('magic')">Magic</button>
+            <button class="lore-nav-btn" onclick="showLore('history')">History</button>
+            <button class="lore-nav-btn" onclick="showLore('vhalgor')">Vhalgor</button>
+            <button class="lore-nav-btn" onclick="showLore('pantheon')">The Twelve</button>
+            <button class="lore-nav-btn" onclick="showLore('weapons')">Rootforged Weapons</button>
+            <button class="lore-nav-btn" onclick="showLore('earth')">Earth &amp; Zemoria</button>
+            <button class="lore-nav-btn" onclick="showLore('geography')">Geography</button>
+            <button class="lore-nav-btn" onclick="showLore('characters')">Characters</button>
+            <button class="lore-nav-btn" onclick="showLore('books')">The Series</button>
+        </div>
+
+        <!-- ── COSMOLOGY ── -->
+        <div id="lore-cosmology" class="lore-tab active">
+            <h2 class="lore-tab-title">Cosmology of Zemoria</h2>
+            <p class="lore-tab-sub">The six primordial Forces. The World Tree as accidental structure. The laws that govern all of existence.</p>
+
+            <div class="lore-force-grid">
+                <div class="lore-force-card"><h4>Order</h4><p>Structure, pattern, law. Symbol: Interlocking Circles.</p></div>
+                <div class="lore-force-card"><h4>Chaos</h4><p>Change, randomness, potential. Symbol: Broken Spiral.</p></div>
+                <div class="lore-force-card"><h4>Creation</h4><p>Growth, genesis, emergence. Symbol: Blooming Flower.</p></div>
+                <div class="lore-force-card"><h4>Destruction</h4><p>Entropy, unmaking, endings. Symbol: Shattered Stone.</p></div>
+                <div class="lore-force-card"><h4>Time</h4><p>Sequence, causality, memory. Symbol: Interlocking Spirals.</p></div>
+                <div class="lore-force-card"><h4>Will</h4><p>Consciousness, direction, choice. Symbol: Single Eye.</p></div>
+            </div>
+
+            <div class="lore-quote">Core Principle: No single Force can manifest alone. Every event requires at least two Forces interacting. This is why magic has rules, why creation has cost, and why nothing in Zemoria exists in true isolation.</div>
+
+            <div class="lore-card">
+                <h3>The World Tree — The Beautiful Accident</h3>
+                <p>The World Tree was not planted by gods or created by design. It was born from the friction energy generated by the Six Forces clashing eternally — that friction crystallized into the First Seed. The Tree is not holy. It is not the source of life. It is a temporary solution to a permanent problem — a beautiful prison that was never meant to last forever.</p>
+                <ul style="margin-top:10px">
+                    <li><strong>The Conductor:</strong> Guides Forces along safe pathways, makes magic possible.</li>
+                    <li><strong>The Filter:</strong> Cleans chaotic Force energy into usable forms; creates seasons, weather, day and night.</li>
+                    <li><strong>The Memory (Songroot):</strong> Stores echoes of all that happens, which is why some places in Zemoria seem to remember emotions or events from the distant past.</li>
+                </ul>
+            </div>
+
+            <div class="lore-card">
+                <h3>The Law of Divine Power</h3>
+                <p>Gods draw power from two equal sources. Remove either and a god weakens catastrophically.</p>
+                <ul style="margin-top:10px">
+                    <li><strong>The Forces:</strong> Their innate connection to the Force combinations that shaped them.</li>
+                    <li><strong>Worshippers' Belief:</strong> Exactly half their power comes from what people believe and say about them — the stories told, the prayers spoken, the names used.</li>
+                </ul>
+                <p style="margin-top:10px">A god does not choose their domain. Their domain is chosen for them by what their civilization needs them to be. Two gods with identical Force combinations become completely different beings based on who worships them and how.</p>
+            </div>
+
+            <div class="lore-card">
+                <h3>Doom Debt — The Cost of Changing Fate</h3>
+                <p>One cannot truly rewrite history — only rearrange its order. Healing one future breaks another. Saving one life dooms another. Every corrected event branches into a Doom Debt — something must pay the cost later. The Keepers of Songroot exist not to prevent doom, but to allocate it to the smallest possible branch.</p>
+            </div>
+
+            <div class="lore-card">
+                <h3>Zemoria &amp; Earth</h3>
+                <p>Zemoria is a parallel universe to Earth. The old age of Zemoria is equivalent to Earth's stone age — prehistoric, hundreds of thousands of years before recorded human history. After a key event in the Songroot timeline, destiny slowly merges the two worlds seamlessly over centuries. By the time ancient civilizations like Egypt, Greece, and Mesoamerica are flourishing, Zemoria and Earth have become the same world. The myths we know from ancient history are the degraded oral traditions of Zemoria's real past.</p>
+            </div>
+        </div>
+
+        <!-- ── MAGIC ── -->
+        <div id="lore-magic" class="lore-tab">
+            <h2 class="lore-tab-title">The Magic System — Rootborn Arcana</h2>
+            <p class="lore-tab-sub">Magic is the controlled manipulation of the Six Forces through the World Tree's conduits. Every living being has a Root Type — their innate magical nature.</p>
+
+            <div class="lore-card">
+                <h3>Root Types</h3>
+                <div class="lore-table-wrap"><table class="lore-table">
+                    <tr><th>Root Type</th><th>Forces</th><th>Capabilities</th></tr>
+                    <tr><td><strong>Songroot</strong></td><td>Time + Creation</td><td>Healing, memory work, fate-reading, harmony.</td></tr>
+                    <tr><td><strong>Shadowflame</strong></td><td>Destruction + Chaos</td><td>Decay, transformation, pain-magic, corruption. The Forbidden Path.</td></tr>
+                    <tr><td><strong>Stormroot</strong></td><td>Chaos + Will</td><td>Weather, emotion magic, lightning, rage.</td></tr>
+                    <tr><td><strong>Starhaven</strong></td><td>Order + Time</td><td>Prophecy, protection, time-slowing, geometry.</td></tr>
+                    <tr><td><strong>Deepveil</strong></td><td>Order + Destruction</td><td>Sealing, silencing, banishing, binding.</td></tr>
+                    <tr><td><strong>Greenreach</strong></td><td>Creation + Will</td><td>Plant growth, animal communication, shapecraft.</td></tr>
+                    <tr><td><strong>Pure Will</strong></td><td>Will alone</td><td>Miracles, divine commands, truth-speaking. Extraordinarily rare.</td></tr>
+                    <tr><td><strong>Null Root</strong></td><td>None</td><td>Magic-blind. Naturally resistant to all spells.</td></tr>
+                </table></div>
+            </div>
+
+            <div class="lore-card">
+                <h3>Power Scaling — Ranks I to X</h3>
+                <div class="lore-table-wrap"><table class="lore-table">
+                    <tr><th>Rank</th><th>Capability</th></tr>
+                    <tr><td>I–II</td><td>Minor spellcasting, combat viable</td></tr>
+                    <tr><td>III–IV</td><td>Reshape buildings, command small armies</td></tr>
+                    <tr><td>V–VI</td><td>Region to nation-threat; master sorcerer</td></tr>
+                    <tr><td>VII</td><td>World-threat; distorts reality accidentally</td></tr>
+                    <tr><td>VIII</td><td>Pantheon-level magic. Only legends reach this.</td></tr>
+                    <tr><td>IX</td><td>Can challenge gods directly.</td></tr>
+                    <tr><td>X</td><td>Can become a god — rewrite existence.</td></tr>
+                </table></div>
+            </div>
+
+            <div class="lore-card" style="border-left-color:#c0522d">
+                <h3>Shadowflame — The Forbidden Path</h3>
+                <p>Shadowflame is Destruction + Chaos magic fueled by pain, fear, and negative will. Using pain as fuel temporarily boosts Root Rank, but each boost carries a permanent cost to the user's body and mind. At its most extreme, the user becomes a Torment Engine — no longer truly a person at all. The basis of the Last Testament's teachings.</p>
+            </div>
+        </div>
+
+        <!-- ── HISTORY ── -->
+        <div id="lore-history" class="lore-tab">
+            <h2 class="lore-tab-title">History of Zemoria</h2>
+            <p class="lore-tab-sub">The Fracture happened hundreds of thousands of years before Kaelen and Ruun were born. No living being in the main timeline has any memory of before it. The current year in the main story is 7,223 Post-Fracture.</p>
+
+            <div class="lore-timeline-item"><div class="lore-timeline-dot gold"></div><div><strong>Prehistoric — The Age of Forces</strong><p>The Six Forces clash eternally. Their friction crystallizes into the First Seed. The World Tree grows. Time is fluid, not yet linear. No civilization. No gods. Only the raw machinery of existence.</p></div></div>
+
+            <div class="lore-timeline-item"><div class="lore-timeline-dot gold"></div><div><strong>Prehistoric — The Golden Age of Gods and Men</strong><p>The Rootborn appear across Zemoria as adult superhuman mortals — no memories, no origin. They do extraordinary things and slowly become heroes. Civilizations flourish alongside them at a level of advancement never seen again. The Tree is young and strong. Magic is abundant. Each Rootborn eventually receives a Rootforged weapon from the World Tree.</p></div></div>
+
+            <div class="lore-timeline-item"><div class="lore-timeline-dot dark"></div><div>
+                <strong>Prehistoric — The Faithless War</strong>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-faithless')">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-faithless" class="spoiler-content">
+                    <p>Vhalgor, the god of death, is corrupted by the Shadowflame Tree. His guilt becomes self-hate, his self-hate becomes hate for the world, and his hate for the world becomes pure rage. All eleven other Rootborn attempt to reach him — and fail. He writes the Last Testament as a vessel for his own survival after death. The gods clash. All twelve die. Advanced civilization collapses entirely. The Keepers are established to guard the twelve Rootforged weapons.</p>
+                </div>
+            </div></div>
+
+            <div class="lore-timeline-item"><div class="lore-timeline-dot red"></div><div><strong>Year 0 PF — The Fracture</strong><p>The World Tree's filtering system fails catastrophically from damage sustained in the Faithless War. Magic becomes unstable. Reality warps in Fracture-zones. The Unremembered appear — beings and memories that can no longer exist in the damaged balance. Time becomes linear for the first time.</p></div></div>
+
+            <div class="lore-timeline-item"><div class="lore-timeline-dot gray"></div><div><strong>Years 1–7,223 PF — The Long Dark</strong><p>Civilization slowly rebuilds from ruins far greater than anyone understands. The Grove establishes the Age of Silence — selectively forgetting dangerous truths to preserve stability. Kaelen and Ruun rise. The Last Testament surfaces and finds its intended vessel.</p></div></div>
+
+            <div class="lore-timeline-item"><div class="lore-timeline-dot red"></div><div>
+                <strong>Year 7,223 PF — The Events of the Current Books</strong>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-crisis')">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-crisis" class="spoiler-content">
+                    <p>The village of Glaire vanishes. The seal on the Underworld cracks. Ilan becomes Ruun's vessel. The siege of the World Tree Palace. Kaelen falls. The World Tree burns. Elira escapes with the infant Kaerion, then dies shortly after leaving him with a foster mother. Ruun claims the throne of the world.</p>
+                </div>
+            </div></div>
+
+            <div class="lore-timeline-item"><div class="lore-timeline-dot teal"></div><div>
+                <strong>Post 7,223 PF — The Future (The Living Legend)</strong>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-future')">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-future" class="spoiler-content">
+                    <p>Kaelen's son Kaerion rises. Both Trees fall. The Six Forces are reunited for the first time since before the Fracture. Power is shared among three: Kaerion, Brask, and Serai. A small anomaly in time is noticed in the epilogue — something intervened.</p>
+                </div>
+            </div></div>
+        </div>
+
+        <!-- ── VHALGOR ── -->
+        <div id="lore-vhalgor" class="lore-tab">
+            <h2 class="lore-tab-title">Vhalgor — The Shadow That Survived</h2>
+            <p class="lore-tab-sub">Previously known as Voren the Stoneheart. God of death, guardian of the underworld, author of the Last Testament, and the only Rootborn to survive the Faithless War.</p>
+
+            <div class="lore-warn">This entire section contains significant spoilers for The Lord Under and for the planned book Pantheon.</div>
+            <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-vhalgor-all')">&#9888; Reveal All Vhalgor Lore</button>
+            <div id="spoiler-vhalgor-all" class="spoiler-content">
+
+                <div class="lore-card">
+                    <span class="lore-pill">Forces: Order + Destruction</span>
+                    <span class="lore-pill" style="margin-left:6px">Weapon: The Clawed Gauntlet</span>
+                    <h3 style="margin-top:10px">Domain &amp; Origin</h3>
+                    <p>Vhalgor's domain is death, mountains, patience, and erosion. He is the guardian of the Underworld. He did not choose this domain — it was given to him by a single act and the story people told about it afterward. Once the story was told enough times, it became true.</p>
+                </div>
+
+                <div class="lore-card">
+                    <h3>The First Kill — How His Domain Was Chosen</h3>
+                    <p>Vhalgor was the first Rootborn to kill someone during his heroic acts rather than simply neutralizing the danger. Every other god had found ways to protect without ending a life. People saw what he did. The story they told was: <em>he is the one who decides who lives and who dies.</em> That story, told enough times, became his reality. His domain expanded without his consent. The other gods kept their distance — not out of cruelty, but because death makes even immortals uneasy. He had more worshippers than almost anyone. He was more alone than all of them. That isolation is the crack the Shadowflame Tree found.</p>
+                </div>
+
+                <div class="lore-card">
+                    <h3>The Five Stages of His Fall</h3>
+                    <div class="lore-vhalgor-stage vs-guilt"><strong>Stage 1 — Guilt:</strong> I did something the others haven't. I crossed a line they haven't. I am different now.</div>
+                    <div class="lore-vhalgor-stage vs-selfhate"><strong>Stage 2 — Self-Hate:</strong> I am not just different. I am lesser. Everything they try to give me I don't deserve. All eleven others tried to reach him at this stage. He could not receive their love. It felt like pity.</div>
+                    <div class="lore-vhalgor-stage vs-worldhate"><strong>Stage 3 — Hate for the World:</strong> The world made me this. The world owes me something it can never pay back. Pity confirmed he was broken.</div>
+                    <div class="lore-vhalgor-stage vs-rage"><strong>Stage 4 — Pure Rage:</strong> No more reasoning. No more grief. Just the fire left when everything else burns away. The Shadowflame Tree whispered: yes.</div>
+                    <div class="lore-vhalgor-stage vs-vessel"><strong>Stage 5 — The Vessel:</strong> The Shadowflame Tree found its opening in the rage. Vhalgor wrote the Last Testament — not as a manual but as a trap. A vessel for himself and the Tree's influence to survive his body's destruction and find a new host. He is the only Rootborn to survive the Faithless War.</div>
+                </div>
+
+                <div class="lore-card" style="border-left-color:#c0522d">
+                    <h3>The Last Testament</h3>
+                    <p>Not a book — a predatory idea given form. Its first teaching — "the World Tree is a prisoner, not a protector" — is actually true. This is what makes it uniquely dangerous: genuine truth used as bait for everything that follows. It does not create disciples. It reassembles Vhalgor through the suffering of others.</p>
+                    <p style="margin-top:8px">Through its most successful vessel, Ruun, Vhalgor is technically the sole survivor of the Faithless War — steering from inside, using Ruun's genuine pain as the wheel.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── PANTHEON ── -->
+        <div id="lore-pantheon" class="lore-tab">
+            <h2 class="lore-tab-title">The Twelve Rootborn</h2>
+            <p class="lore-tab-sub">Adult superhuman mortals who appeared across Zemoria with no memories and no origin. They became heroes, then gods, then extinct. Their origins are the subject of the planned book Pantheon.</p>
+
+            <div class="lore-table-wrap"><table class="lore-table">
+                <tr><th>Name</th><th>Title</th><th>Forces</th><th>Rootforged Weapon</th></tr>
+                <tr><td><strong>Thuramos</strong></td><td>The Stormhammer</td><td>Chaos + Will</td><td>Stormcleave (war hammer)</td></tr>
+                <tr><td><strong>Solaris</strong></td><td>The Lifebringer</td><td>Creation + Order</td><td>Dawnpiercer (golden bow)</td></tr>
+                <tr><td><strong>Gaelara</strong></td><td>The Verdant Mother</td><td>Creation + Time</td><td>Rootspire (living spear)</td></tr>
+                <tr><td><strong>Tainos</strong></td><td>The Silent Loom</td><td>Order + Destruction</td><td>Threadcutter (great scythe)</td></tr>
+                <tr><td><strong>Nyris</strong></td><td>The Deepwave</td><td>Destruction + Time</td><td>Abysscall (trident)</td></tr>
+                <tr><td><strong>Syritha</strong></td><td>The Tempest-Binder</td><td>Chaos + Creation</td><td>Galewhirl (twin blades)</td></tr>
+                <tr><td><strong>Aphiryn</strong></td><td>The Weaver of Stars</td><td>Order + Time</td><td>Fatebind (needle and thread)</td></tr>
+                <tr><td><strong>Helwár</strong></td><td>The Windforged</td><td>Chaos + Will</td><td>Galecaller (hollow spear)</td></tr>
+                <tr><td><strong>Morian</strong></td><td>The Shadow-Edged</td><td>Destruction + Chaos</td><td>Mercykill (curved dagger)</td></tr>
+                <tr><td><strong>Elara</strong></td><td>The Song's Memory</td><td>Creation + Time</td><td>Memorychord (lyre)</td></tr>
+                <tr><td><strong>Vhalgor</strong></td><td>The Stoneheart / The Death God</td><td>Order + Destruction</td><td>The Clawed Gauntlet</td></tr>
+                <tr><td><strong>Lyria</strong></td><td>The First Spark</td><td>Creation + Will</td><td>Firstflame (eternal torch)</td></tr>
+            </table></div>
+
+            <div class="lore-card" style="margin-top:16px">
+                <h3>The Thirteenth</h3>
+                <p>Not a god — a presence. Born from the absence where Forces failed to coalesce. The silence that remained after the Fracture. Worshipped by no one, remembered by few. Central to the deepest mysteries of Zemoria.</p>
+            </div>
+
+            <div class="lore-card">
+                <h3>What Makes Gods Different From Each Other</h3>
+                <p>Six of the twelve share Force combinations in pairs: Thuramos and Helwár (Chaos + Will), Gaelara and Elara (Creation + Time), Tainos and Vhalgor (Order + Destruction). What makes them distinct beings despite identical Forces is entirely their worshippers — the stories told, the needs projected, the prayers spoken. Identity shaped by expectation, even for gods. This is the philosophical heart of the planned book Pantheon.</p>
+            </div>
+        </div>
+
+        <!-- ── WEAPONS ── -->
+        <div id="lore-weapons" class="lore-tab">
+            <h2 class="lore-tab-title">Rootforged Weapons</h2>
+            <p class="lore-tab-sub">A gift from the World Tree, forged from the Root of each individual god at the height of their power. No known mortal has survived the forging process unaided. Each weapon's form is determined by the god's deepest desire — not by their worshippers.</p>
+
+            <div class="lore-quote">First Contact Rule: A Rootforged weapon temporarily floods the mind of a mortal who picks it up for the first time — the god's knowledge, memories, and understanding of the Forces all at once. Those with strong enough souls survive this and emerge with knowledge they have no natural way of possessing. This is the source of the sudden, unexplained leaps in civilization — in architecture, astronomy, agriculture, and philosophy — that historians still cannot fully explain.</div>
+
+            <div class="lore-quote" style="margin-top:10px">Prophet Rule: People descended from Rootborn gods carry diluted divine blood. Near residual Force energy or weapon sites, this blood activates as visions — not magic, but resonance. These people, throughout human history, were called prophets, oracles, seers, and shamans.</div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Thuramos — Stormcleave (war hammer)</span><p>Head carved from the first mountain he ever split, veined with crystallized lightning frozen inside permanently. His deepest desire: to never be the thing that failed when everything depended on him. Never misses. Always returns. Makes no sound until impact — the impact sound is thunder.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Solaris — Dawnpiercer (golden bow)</span><p>His deepest desire was to illuminate — to reveal, to burn away what was false from a distance. Arrows of condensed light that don't wound conventionally — they reveal truth. Strike a lie and it unravels. Strike a person and they see themselves clearly for the first time. Devastating in battle because most things cannot withstand being truly seen.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Gaelara — Rootspire (living spear)</span><p>Never cut from anything — it grew. A single branch of the World Tree itself, still alive, its tip hardening into whatever material the earth beneath her feet is made of. Her deepest desire: that nothing be truly lost, that every fallen thing find its way back into the cycle of growth and decay.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Tainos — Threadcutter (great scythe)</span><p>His deepest desire: for everything to find its proper ending — the final note of a song played correctly. The blade is made from silence itself. It makes no sound when it moves. Things cut by it feel only completion. It cuts what is ready to be cut and leaves what isn't.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Nyris — Abysscall (trident)</span><p>Three tines of different lengths — the ocean is never level. Made from the bones of the Leviathan's first shedding. His deepest desire: not to conquer the sea but to be understood by it, to have his grief witnessed. When struck against the ocean floor, produces a sound so low it can only be felt. Creatures of the deep surface not in aggression but in mourning.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Syritha — Galewhirl (twin blades)</span><p>Two curved blades joined at the hilt, designed to be spun rather than swung — the weapon fights like a dance. Made from compressed storm wind, solid to the touch but visually translucent. Cannot be used by someone fighting from fear or duty. The moment a wielder calculates, the blades lose their edge entirely.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Aphiryn — Fatebind (needle and thread)</span><p>A needle the length of a short sword, made from the light of a star that died before Zemoria existed. The thread is invisible, infinite, drawn from Songroot itself. In battle it stitches — connecting cause to consequence, making the threads of causality visible to anyone nearby. Enemies find themselves unable to act without seeing exactly where that action leads.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Helwár — Galecaller (hollow spear)</span><p>The shaft is hollow and wind passes through it constantly, producing a low note that changes pitch with speed. In battle it sounds like a living thing. Beasts of any kind will not attack the wielder — not out of fear but recognition. Something ancient in animal instinct says: this is something older than predator and prey.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Morian — Mercykill (curved dagger)</span><p>Deliberately small — because Morian understood that the most merciful ending is a quiet one. Always slightly cool to the touch. Causes no pain whatsoever on contact — things cut by it feel only release. Has no visible edge to the naked eye. It looks blunt. It is not.</p></div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Elara — Memorychord (lyre)</span><p>The only Rootforged weapon that is purely an instrument. Seven strings, each one a different age of the world before the Fracture. Her deepest desire: for nothing to be forgotten. In the vicinity of Memorychord, things that were forgotten begin to resurface. Playing it near a Fracture zone causes the location itself to replay its history like a living recording.</p></div>
+
+            <div class="lore-weapon-card" style="border-top-color:#c0522d">
+                <span class="lore-weapon-name">Vhalgor — The Clawed Gauntlet</span>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-gauntlet')" style="display:block;margin-top:8px">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-gauntlet" class="spoiler-content">
+                    <p>Before corruption: an open palm — what he wanted most was to hold the world safe in his hands. After corruption: the palm grew claws, roots extending from his hand drawing from his own Root, capable of building any weapon he could envision. Permanently attached to whichever hand it formed on. The corruption didn't change the desire — it weaponized it. He still wanted to hold the world. Now he tears it apart to do it.</p>
+                </div>
+            </div>
+
+            <div class="lore-weapon-card"><span class="lore-weapon-name">Lyria — Firstflame (eternal torch)</span><p>Her deepest desire: for things to begin — for the first step to always be possible no matter how dark or how lost. The torch never goes out. Cannot be extinguished by wind, water, or time. In the presence of Firstflame, people find themselves suddenly capable of beginning things they had convinced themselves were impossible. The weapon most responsive to mortal wielders, because Lyria's domain was always about choice — and mortals make choices in the face of genuine uncertainty.</p></div>
+
+            <div class="lore-card" style="border-left-color:#d4a020;margin-top:6px">
+                <h3>Three Weapons Still Undiscovered</h3>
+                <ul>
+                    <li><strong>Aphiryn's Fatebind</strong> — buried near the Nazca plateau in Peru. The Nazca people built their famous lines as a conduit system from a secondhand divine download — the weapon itself was never found by them.</li>
+                    <li><strong>Tainos's Threadcutter</strong> — buried beneath the unexcavated sections of Göbekli Tepe in Turkey. Only a fraction of that site has been excavated. Something is in the sections archaeology has not yet reached.</li>
+                    <li><strong>Morian's Mercykill</strong> — somewhere in Japan, in a location considered too sacred to excavate.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ── EARTH ── -->
+        <div id="lore-earth" class="lore-tab">
+            <h2 class="lore-tab-title">Zemoria &amp; Earth — A Hidden History</h2>
+            <p class="lore-tab-sub">After the Keeper bloodline ends, the timelines of Zemoria and Earth slowly merge. The myths of ancient civilizations are the degraded oral traditions of Zemoria's real history. The gods they worshipped were real. Their divine weapons were real.</p>
+
+            <div class="lore-quote">Mortal civilizations who found a Rootforged weapon could not simply wield it — the process that produces them requires a god's Root. Instead, across generations, these civilizations reverse-engineered the World Tree's conductor function using stone and geometry and sacred scale. They couldn't grow a Tree. So they built one. Out of rock. Their great structures are not primarily tombs or astronomical calendars — they are Force channeling devices.</div>
+
+            <div class="lore-table-wrap"><table class="lore-table">
+                <tr><th>Weapon</th><th>Primary Civilization</th><th>Conduit Architecture</th><th>Mythology Produced</th></tr>
+                <tr><td><strong>The Clawed Gauntlet (Vhalgor)</strong></td><td>Ancient Egypt, Mesopotamia</td><td>The Pyramids of Giza — geometric precision channeling Order + Destruction</td><td>Anubis, Osiris, the weighing of souls, Ereshkigal, Nergal. The entire concept of divine death judgment.</td></tr>
+                <tr><td><strong>Stormcleave (Thuramos)</strong></td><td>Norse / Proto-Indo-European</td><td>Runestones, stone circles. Elder Futhark runes are partial Force channeling symbols from the divine download.</td><td>Thor's Mjolnir, Zeus's thunderbolt, Indra's Vajra, Perun, Taranis. The storm god with a hammer across all Indo-European cultures.</td></tr>
+                <tr><td><strong>Dawnpiercer (Solaris)</strong></td><td>Ancient Greece, Vedic India</td><td>Solar-aligned temples. The Oracle at Delphi sat above a vent concentrating residual Force energy from this weapon.</td><td>Apollo's silver bow, Surya's solar arrows, divine light as revelation across Mediterranean and Indian traditions.</td></tr>
+                <tr><td><strong>Rootspire (Gaelara)</strong></td><td>Celtic Europe, Olmec</td><td>Sacred forest groves. Mayan stepped pyramids mimicking the World Tree's root-to-canopy structure.</td><td>The Green Man, druidic forest magic, the Celtic sacred grove. The Maya's extraordinarily accurate calendar — Gaelara's Root was Creation + Time.</td></tr>
+                <tr><td><strong>Threadcutter (Tainos)</strong></td><td>Ancient China, Andean cultures</td><td>Sacsayhuamán's interlocking polygonal stonework. Understanding endings gives understanding of which structures endure.</td><td>Yanluo Wang, the Mandate of Heaven, Andean death-and-renewal cycles, Pachamama.</td></tr>
+                <tr><td><strong>Abysscall (Nyris)</strong></td><td>Ancient Greece, Polynesia</td><td>Open ocean as the conduit. Polynesian navigation systems drawing on residual Destruction + Time energy to feel the deep.</td><td>Poseidon's trident, Tangaroa. Easter Island's moai face inland — protecting the living, because the ocean was already his.</td></tr>
+                <tr><td><strong>Galewhirl (Syritha)</strong></td><td>West Africa (Yoruba), Ancient India</td><td>Circular ceremonial dance floors, spiral patterns on sacred sites — Force channeling drawn on the ground, not built upward.</td><td>Oya (Yoruba storm goddess), the apsara tradition, Shiva's tandava. Sacred dance as warfare wherever found.</td></tr>
+                <tr><td><strong>Fatebind (Aphiryn)</strong></td><td>Ancient Greece, Norse, East Asia — widespread</td><td>The Nazca Lines — enormous geometric patterns channeling Force energy across vast distances using the land itself as a circuit board.</td><td>The Greek Moirai, the Norse Norns at Yggdrasil's roots, the East Asian Red Thread of fate. Appears across unconnected cultures.</td></tr>
+                <tr><td><strong>Galecaller (Helwár)</strong></td><td>Celtic Europe, Plains Indigenous North America</td><td>Medicine wheels on elevated open ground — Force channeling drawing Chaos + Will from the open sky.</td><td>Celtic hero traditions, the vision quest, animal guardian traditions. Stories of figures who walked unharmed among predators.</td></tr>
+                <tr><td><strong>Mercykill (Morian)</strong></td><td>Ancient Japan, Aztec Mexico</td><td>Aztec stepped pyramids concentrating Destruction + Chaos toward a focal apex — technically correct as a Force channeling system.</td><td>Japanese concept of a good death. The Aztec sacrifice tradition — a civilization that built something from the divine download that Morian himself would have been horrified by.</td></tr>
+                <tr><td><strong>Memorychord (Elara)</strong></td><td>Caral-Supe / Norte Chico (3000–1800 BCE), downstream to the Maya</td><td>Six pyramids built as acoustic resonance structures. Sunken circular plazas as acoustic chambers. The entire city of Caral is an instrument. No weapons, no warfare found anywhere at the site.</td><td>Orpheus's lyre, the Irish bardic harp, the veena of Saraswati, the West African griot tradition. The Maya's calendar — inherited from a tradition begun by people who built pyramids around a lyre.</td></tr>
+                <tr><td><strong>Firstflame (Lyria)</strong></td><td>Universal — all of humanity</td><td>No structure required. Its Force energy radiates from wherever it rests. Every eternal sacred flame in every culture is a response to its ambient presence.</td><td>Prometheus's stolen fire, the Vestal Virgins, the Olympic torch, Zoroastrian sacred fires, Buddhist temple flames. The most universal sacred symbol in human history.</td></tr>
+            </table></div>
+
+            <div class="lore-card" style="margin-top:16px">
+                <h3>Caral-Supe — The Most Significant Discovery</h3>
+                <p>The oldest city in the Americas (3000–1800 BCE), contemporaneous with the earliest Egyptian pyramids. Six pyramids built around music — flutes from pelican and condor bones, cornets from llama and deer bones found inside the pyramids themselves. No weapons. No battlements. No evidence of warfare anywhere at the site. A civilization of remarkable complexity built entirely without violence.</p>
+                <p style="margin-top:8px">Their pyramids are acoustic resonance structures. Their sunken circular plazas are acoustic chambers. The entire city of Caral is a conduit built to amplify Elara's Memorychord — to make the music of memory louder, to push it further across time. When their resources shifted, they simply left, carrying their knowledge forward into Andean civilization — seeding the Maya's calendrical mastery generations later.</p>
+            </div>
+        </div>
+
+        <!-- ── GEOGRAPHY ── -->
+        <div id="lore-geography" class="lore-tab">
+            <h2 class="lore-tab-title">Geography of Zemoria</h2>
+            <p class="lore-tab-sub">A flat island world in the shape of an ancient spearhead, floating in open ocean. Four major regions. 48 cities. The ruins of a far more advanced civilization buried beneath every major site.</p>
+
+            <div class="lore-table-wrap"><table class="lore-table">
+                <tr><th>Region</th><th>Capital</th><th>Location</th><th>Forces</th><th>Current Status</th></tr>
+                <tr><td><strong>Nórvalhalla</strong></td><td>Stormhelm</td><td>The sharp northern tip</td><td>Chaos + Will</td><td>Occupied by Ruun's forces. Wings bound. Black marble mines.</td></tr>
+                <tr><td><strong>Astraea</strong></td><td>Solarius</td><td>Eastern blade edge</td><td>Creation + Order</td><td>Corrupted. Sun towers darkened. The Unwavering Light cult has become fanatical.</td></tr>
+                <tr><td><strong>The Heartgrove</strong></td><td>Everlush</td><td>Wide central heart</td><td>Creation + Time</td><td>Under siege. Elder-Trees petrified. World Tree Palace dying at the geographic center.</td></tr>
+                <tr><td><strong>Vaelheim</strong></td><td>Tidewatch</td><td>Western blade edge</td><td>Destruction + Time</td><td>Darkening. Waters blackened. The Leviathan is stirring.</td></tr>
+            </table></div>
+
+            <div class="lore-card" style="margin-top:16px">
+                <h3>Special Locations</h3>
+                <ul>
+                    <li><strong>Arkaneth</strong> — The buried library-city beneath the Dustlands. Almost certainly a pre-Faithless War structure — a capsule from when gods and civilization flourished together. Its Memory Vaults, River of Thought, and Upside-Down Tree chamber still hum with power.</li>
+                    <li><strong>Glaire</strong> — A small village built around a Well predating the Fracture. Replaced overnight by a forest of flesh and bone. Ruun's entry point into the mortal world.</li>
+                    <li><strong>The Hollow</strong> — A place where memory thins. Once a burial ground for songs too heavy to bear. Now a river where the past flows freely.</li>
+                    <li><strong>The Woundspire</strong> — A fracture in the land and the soul. Where light and silence bled into each other. Where the first forgetting began. Was sealed — now waking.</li>
+                    <li><strong>The Underworld</strong> — Ruun's domain. Layers: Ashen Wastes → Flaying Pits → Screaming Citadel → Shadowflame Tree Grove → Mausoleum of Names → Inverse Roots.</li>
+                </ul>
+            </div>
+
+            <div class="lore-card">
+                <h3>All 48 Cities of Zemoria</h3>
+                <div class="lore-table-wrap"><table class="lore-table">
+                    <tr><th>Type</th><th>Cities</th></tr>
+                    <tr><td>Capitals (5)</td><td>Stormhelm, Solarius, Everlush, Tidewatch, World Tree Palace</td></tr>
+                    <tr><td>Major Cities (10)</td><td>Thunderhold, Skyspire, Mirage, Sunhaven, Glasstown, Deepwood, Whisperpost, Roothaven, Saltfang, Wavecrest</td></tr>
+                    <tr><td>Specialized (6)</td><td>Arkaneth, Hollowmere, Durnholde, Thornspire, Ashendale, Starfall</td></tr>
+                    <tr><td>Trading Hubs (3)</td><td>Crossroads, Markettower, Bartertown</td></tr>
+                    <tr><td>Religious Centers (4)</td><td>Gaelara's Rest, Firstcircle, Stoneprayer, Lightkeep</td></tr>
+                    <tr><td>Frontier Outposts (3)</td><td>Edgewatch, Newroot, Farreach</td></tr>
+                    <tr><td>Ruined / Vanished (7)</td><td>Glaire, Old Stormhelm, First Tidewatch, Sunken Star, Rootcapital, Shadowhaven, Melody</td></tr>
+                    <tr><td>Underworld Cities (5)</td><td>Screaming Citadel, Fleshtower, Ashen Market, Bone Ziggurat City, Whisperprison</td></tr>
+                    <tr><td>Mythical / Lost (3)</td><td>Thirteenth City, Pre-Fracture Cities, Veil-Cities</td></tr>
+                </table></div>
+            </div>
+        </div>
+
+        <!-- ── CHARACTERS ── -->
+        <div id="lore-characters" class="lore-tab">
+            <h2 class="lore-tab-title">Key Characters</h2>
+            <p class="lore-tab-sub">The people who shaped — or will shape — Zemoria across its stories. Character entries marked with spoiler warnings contain major plot information.</p>
+
+            <div class="lore-card">
+                <div class="lore-char-header"><div class="lore-avatar av-gold">KA</div><div><h3 style="margin:0">Kaelen</h3><span style="font-size:0.8rem;color:#8B4513">God-King of Zemoria</span></div></div>
+                <p><strong>Root Type:</strong> Starhaven (Order + Time) — <strong>Rank IX</strong><br>Born in the last days before the Fracture, Kaelen is one of the few beings with any echo of what came before. He ruled Zemoria for six thousand years, maintaining the Age of Silence — the belief that some truths are too dangerous to remember. His relationship with Ruun is the emotional axis of the series: he loved him genuinely and erased him systematically, and both things are true.</p>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-kaelen')" style="margin-top:10px">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-kaelen" class="spoiler-content">
+                    <p>Kaelen falls to Ruun during the siege of the World Tree Palace. His dying act is entrusting his son Kaerion to Elira. In death, he transforms into the Force of Order — an eternal presence rather than a person. His final words to Ruun: <em>"I tried… I stayed."</em></p>
+                </div>
+            </div>
+
+            <div class="lore-card">
+                <div class="lore-char-header"><div class="lore-avatar av-dark">RU</div><div><h3 style="margin:0">Ruun</h3><span style="font-size:0.8rem;color:#8B4513">The Lord Under</span></div></div>
+                <p><strong>Root Type:</strong> Originally Songroot (Time + Creation), corrupted to Shadowflame — <strong>Rank VIII via the Last Testament</strong><br>Kaelen's brother-in-bond and co-victor against the Leviathan. Systematically erased from history over six thousand years — his portrait removed from the Wall of Heroes, his victories attributed to Kaelen alone. This erasure was not just an insult but a literal halving of his divine power. His corruption was genuine pain exploited by Vhalgor's influence through the Last Testament.</p>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-ruun')" style="margin-top:10px">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-ruun" class="spoiler-content">
+                    <p>Ruun claims the throne after Kaelen's fall. His reign destabilizes reality itself as the Shadowflame Tree corrupts the world. In the Living Legend timeline, Kaelen's son Kaerion eventually allows Ruun's transformation rather than simply destroying him — and Ruun becomes the Force of Destruction. His final words: <em>"You should have stopped me."</em></p>
+                </div>
+            </div>
+
+            <div class="lore-card">
+                <div class="lore-char-header"><div class="lore-avatar av-red">IL</div><div><h3 style="margin:0">Ilan</h3><span style="font-size:0.8rem;color:#8B4513">The Shadow-Eater</span></div></div>
+                <p>Born in Glaire under a bad sign. Her second shadow appeared when she was six and had developed opinions of its own by twelve. A cursed girl from a forgotten village who became the centre of something far larger than herself.</p>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-ilan')" style="margin-top:10px">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-ilan" class="spoiler-content">
+                    <p>Ilan becomes Ruun's chosen vessel, her hunger for belonging weaponized against her. She is consumed by Ruun at The Lord Under's climax — her heart devoured, her body torn apart. But her discarded humanity, the remnant Ruun couldn't use, fertilizes Kaelen's seed and becomes the unexpected seed of hope in the ruins of everything. An accidental hero who never knew she was one.</p>
+                </div>
+            </div>
+
+            <div class="lore-card">
+                <div class="lore-char-header"><div class="lore-avatar av-teal">EL</div><div><h3 style="margin:0">Elira</h3><span style="font-size:0.8rem;color:#8B4513">Kaelen's Royal Consort</span></div></div>
+                <p>Kaelen's royal consort and closest companion from the very beginning of his journey. Her flame affinity comes from ancient heritage predating the World Tree itself — her family carried a direct soul-connection to the Forces of Creation and Chaos, which in combination produces flame: older and more volatile than Solaris's light.</p>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-elira')" style="margin-top:10px">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-elira" class="spoiler-content">
+                    <p>Elira carries the infant Kaerion from the burning World Tree Palace and leaves him with a foster mother before dying shortly after. She never learns what he becomes. She doesn't get closure. She simply does the last thing she can do for the man she loved and then she's gone — one of the series' most quietly devastating endings.</p>
+                </div>
+            </div>
+
+            <div class="lore-card">
+                <div class="lore-char-header"><div class="lore-avatar av-purple">KR</div><div><h3 style="margin:0">Kaerion</h3><span style="font-size:0.8rem;color:#8B4513">The Living Legend (In Writing)</span></div></div>
+                <p><strong>Root Type:</strong> Pure Will — <strong>Rank: Beyond X</strong><br>Kaelen's son. Raised in the slums after Elira left him with a foster mother. His foster mother was executed publicly by Ruun in Kaerion's early twenties. He becomes a protector-thief who believes himself purely human — until the palace crown reacts to his presence. The confluence of his father's Starhaven bloodline and his mother's ancient Force-connection explains why he can access something no one in Zemoria's history has accessed before: a direct, unmediated link to the Force of Will.</p>
+            </div>
+
+            <div class="lore-card">
+                <div class="lore-char-header"><div class="lore-avatar av-gray">??</div><div><h3 style="margin:0">The Keeper</h3><span style="font-size:0.8rem;color:#8B4513">Songroot protagonist — name yet to be revealed</span></div></div>
+                <p>A young woman in the medieval era who does not believe in magic — like practically everyone else in her world. She awakens the Keeper powers of her great-grandmother: the ability to touch Songroot, the hidden layer of reality where time and causality intertwine, and make small precise adjustments to the flow of events. She didn't ask for this. She doesn't want it. And she navigates it entirely alone in a world that would not believe her if she tried to explain.</p>
+                <button class="spoiler-toggle-btn" onclick="toggleSpoiler('spoiler-keeper')" style="margin-top:10px">&#9888; Reveal Spoilers</button>
+                <div id="spoiler-keeper" class="spoiler-content">
+                    <p>She dies accidentally — slips and breaks her neck after going out for drinks. The most mundane possible exit for someone who carried the weight of all of time. Her death ends the Keeper bloodline entirely, freeing destiny to run unconstrained. The two timelines of Zemoria and Earth, no longer held separate by the Keepers' interventions, slowly become seamless. The myths were real. The weapons are out there.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── BOOKS ── -->
+        <div id="lore-books" class="lore-tab">
+            <h2 class="lore-tab-title">The Zemoria Chronicles — Series Structure</h2>
+            <p class="lore-tab-sub">All books in the series, their place in the timeline, and what layer of the world's lore they explore.</p>
+
+            <div class="lore-card">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <h3>Pantheon</h3>
+                    <span class="lore-status status-planned">Planned</span>
+                </div>
+                <p style="margin-top:8px">The origin epic. Twelve extraordinary strangers appear across Zemoria as adult superhumans with no memories and no origin. They become heroes. They become gods. The Golden Age of civilization flourishes alongside them. Then Vhalgor falls. The Faithless War ends everything.</p>
+                <p style="margin-top:8px"><strong>Format:</strong> A transcript of an amalgamation of oral stories, songs, and poems — assembled like ancient history recovered through fragments. The narrative begins as a chorus of many voices. Slowly, Vhalgor's chapters grow longer. The others grow shorter. By the final act, almost everything is Vhalgor — not because he is the only one worth remembering, but because the others hurt too much to remember clearly.</p>
+                <p style="margin-top:6px;font-style:italic;color:#8B4513;font-size:0.85rem">Timeline: Prehistoric — hundreds of thousands of years before the main series.</p>
+            </div>
+
+            <div class="lore-card">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <h3>The Fractured Tree <span style="font-size:0.85rem;font-weight:normal;color:#8B4513">— Zemoria Chronicles, Book 1</span></h3>
+                    <span class="lore-status status-written">Published</span>
+                </div>
+                <p style="margin-top:8px">Kaelen, a quiet wanderer with no claim to legend, is drawn into a journey that will test his loyalty, his strength, and his understanding of power itself.</p>
+                <p style="margin-top:6px;font-style:italic;color:#8B4513;font-size:0.85rem">Lore layer: The weight of the Age of Silence. The world as it was under the broken system.</p>
+            </div>
+
+            <div class="lore-card">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <h3>The Lord Under <span style="font-size:0.85rem;font-weight:normal;color:#8B4513">— Zemoria Chronicles, Book 2</span></h3>
+                    <span class="lore-status status-written">Published</span>
+                </div>
+                <p style="margin-top:8px">Driven by a hunger for recognition that curdles into a thirst for vengeance, Ruun begins a monstrous transformation that will remake the world.</p>
+                <p style="margin-top:6px;font-style:italic;color:#8B4513;font-size:0.85rem">Lore layer: The breaking point. The moment the broken system finally shatters.</p>
+            </div>
+
+            <div class="lore-card">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <h3>The Living Legend <span style="font-size:0.85rem;font-weight:normal;color:#8B4513">— Zemoria Chronicles, Book 3</span></h3>
+                    <span class="lore-status status-writing">In Writing</span>
+                </div>
+                <p style="margin-top:8px">After the fall of the God-King, a young man raised in the slums of a broken world begins to discover that he is something Zemoria has never seen before. The answer the broken system never allowed.</p>
+                <p style="margin-top:6px;font-style:italic;color:#8B4513;font-size:0.85rem">Lore layer: The answer. The collapse of the Tree system. The first true god.</p>
+            </div>
+
+            <div class="lore-card">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <h3>Songroot</h3>
+                    <span class="lore-status status-planned">Planned</span>
+                </div>
+                <p style="margin-top:8px">Set in an alternate timeline — a medieval era where magic has been forgotten and the gods are bedtime stories. A young woman who doesn't believe in magic discovers she has inherited a duty that has been passed through her bloodline for thousands of years. She didn't ask for it. She doesn't want it. And the weight of all of history rests on whether she can bear it.</p>
+                <p style="margin-top:6px;font-style:italic;color:#8B4513;font-size:0.85rem">Lore layer: What happens when the right ending never comes. The cost of rage over reason.</p>
+            </div>
+
+            <div class="lore-card">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+                    <h3>Future Books — The Weapons in Human History</h3>
+                    <span class="lore-status status-future">Future</span>
+                </div>
+                <p style="margin-top:8px">Stories set across various points in Earth's history and potentially the present day or near future — following the discovery and wielding of Rootforged weapons by human civilizations across the ages. The myths were real. The weapons are still out there. Three remain undiscovered.</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- Footer -->
@@ -283,14 +1110,30 @@
             </a>
         </div>
         <p>&copy; <span id="currentYear"></span> Ziad Jweiles. All rights reserved.</p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">
-            This is the official author website of Ziad Jweiles
-        </p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">This is the official author website of Ziad Jweiles</p>
     </footer>
 
     <script>
-        // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        function showLore(id) {
+            document.querySelectorAll('.lore-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.lore-nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('lore-' + id).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function toggleSpoiler(id) {
+            const el = document.getElementById(id);
+            const btn = event.target;
+            if (el.classList.contains('revealed')) {
+                el.classList.remove('revealed');
+                btn.textContent = '⚠ Reveal Spoilers';
+            } else {
+                el.classList.add('revealed');
+                btn.textContent = '▲ Hide Spoilers';
+            }
+        }
     </script>
 </body>
 </html>
